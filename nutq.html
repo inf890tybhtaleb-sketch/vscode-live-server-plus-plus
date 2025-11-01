@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نُطْق NutQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutQ نطق</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        // Custom Tailwind Colors based on the palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'palette-orange-light': '#FDD88C', // Light Orange/Yellow
+                        'palette-orange-mid': '#FFAF36', // Mid Orange
+                        'palette-blue': '#87CEEB',      // Light Blue (Sky)
+                        'palette-cream': '#FFF5D6',     // Creamy Yellow
+                        'palette-lilac': '#E0C8F5',     // Lilac
+                        'palette-peach': '#FFDAB9',     // Peach/Light Orange
+                        'palette-grey': '#E8EDF1',      // Light Grey/Blue
+                        'palette-pink': '#FFD1DC',      // Light Pink
+                        'palette-yellow': '#FCE66E',    // Bright Yellow
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff; /* أو أي لون / صورة */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+    <style>
+        
+            body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: background 0.1s ease;
+    }
+
+    /* شاشة الأنميشن */
+    .animation {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #01DCBA, #7F30CB);
+      z-index: 10;
+      transition: opacity 0.5s ease;
+    }
+
+    .word {
+      display: flex;
+      gap: 0.2em;
+    }
+
+    .letter {
+      color: white;
+      font-size: 18vw;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateX(150px) translateY(50px);
+      animation: fallIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    @keyframes fallIn {
+      0% { opacity: 0; transform: translateX(150px) translateY(50px) rotate(10deg); }
+      60% { opacity: 1; transform: translateX(-15px) translateY(-10px) rotate(-5deg); }
+      100% { opacity: 1; transform: translateX(0) translateY(0) rotate(0deg); }
+    }
+
+    .letter:nth-child(1) { animation-delay: 0.1s; }
+    .letter:nth-child(2) { animation-delay: 0.3s; }
+    .letter:nth-child(3) { animation-delay: 0.5s; }
+    .letter:nth-child(4) { animation-delay: 0.7s; }
+
+    /* واجهة تسجيل الدخول */
+    .login-container {
+      display: none;
+      width: 320px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .login-container h2 {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .login-container input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-container button {
+      background: #f39c12;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-container button:hover {
+      background: #e67e22;
+    }
+        body {
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+            touch-action: pan-y; /* Prevent page scroll while dragging game elements */
+            background-color: #F0F9FF; /* Light blue background like palette-grey */
+        }
+        .card {
+            @apply bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 cursor-pointer flex flex-col items-center justify-center p-6 text-center;
+        }
+        .card:active, .game-card:active {
+             @apply transform scale-95 shadow-inner;
+        }
+        .game-card {
+             /* Use white bg for contrast, borders will use palette */
+            @apply bg-white border-4 border-transparent rounded-2xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer flex flex-col items-center justify-center p-4 text-center aspect-square;
+        }
+        .hidden {
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 175, 54, 0.7); } /* palette-orange-mid */
+            50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 175, 54, 0); }
+        }
+        .pulse-animation {
+            animation: pulse 2.5s infinite;
+        }
+        .loader {
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #87CEEB; /* palette-blue */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .correct-answer {
+            transition: all 0.3s ease-in-out;
+            border: 8px solid #22c55e; /* green-500 */
+            transform: scale(1.1);
+        }
+        .wrong-answer {
+            transition: all 0.3s ease-in-out;
+            border: 8px solid #ef4444; /* red-500 */
+            animation: shake 0.5s;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        /* Mohammed Game Styles */
+        #mohammed-game-world {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            max-height: 500px;
+            background: linear-gradient(to bottom, #87CEEB 0%, #a2dff4 100%); /* palette-blue gradient */
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid #f0f0f0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: background 1.5s ease-in-out;
+        }
+        #mohammed-game-world.night-sky {
+             background: linear-gradient(to bottom, #001030 0%, #203050 100%);
+        }
+        #mohammed-game-world.calm-mode .parallax-bg,
+        #mohammed-game-world.calm-mode .background-cloud {
+            display: none;
+        }
+         #mohammed-game-world.calm-mode #mohammed-character.is-moving {
+             animation: none; /* Disable walk cycle in calm mode */
+         }
+
+        .draggable {
+            position: absolute;
+            cursor: grab;
+            z-index: 15; /* Default z-index for draggable items */
+        }
+        .draggable:active {
+            cursor: grabbing;
+            z-index: 1000 !important; /* Ensure dragged item is always on top */
+        }
+        #mohammed-character {
+            bottom: 10%; /* Sits on top of the grass */
+            left: 50%;
+            width: 80px;
+            height: 120px;
+            transform: translateX(-50%);
+            z-index: 10;
+            filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.2));
+            transition: bottom 0.3s ease-out; /* For jumping */
+        }
+        #mohammed-character.is-moving {
+            animation: walk-cycle 0.6s infinite;
+        }
+        @keyframes walk-cycle {
+            0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+            25% { transform: translate(-50%, -5px) rotate(-2deg); }
+            50% { transform: translate(-50%, 0) rotate(0deg); }
+            75% { transform: translate(-50%, -5px) rotate(2deg); }
+        }
+        #mohammed-character svg {
+            width: 100%;
+            height: 100%;
+        }
+        #mohammed-character .wet-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(135, 206, 235, 0.6); /* palette-blue with alpha */
+            border-radius: 40px 40px 10px 10px;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+        #mohammed-character.wet .wet-overlay {
+            opacity: 1;
+        }
+        .thought-bubble {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+            z-index: 100;
+        }
+         .thought-bubble.visible { opacity: 1; }
+
+        .parallax-bg {
+            position: absolute;
+            bottom: 10%;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background-repeat: repeat-x;
+            background-size: contain;
+            transition: transform 0.1s linear;
+        }
+        #far-mountains {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200"><path d="M0,150 L100,100 L200,140 L300,80 L400,160 L500,110 L600,150 L700,90 L800,170 V200 H0 Z" fill="%23a3b18a"/></svg>');
+            z-index: 2;
+        }
+        #near-hills {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200"><path d="M0,180 L150,120 C 250,80 350,180 450,160 C 550,140 650,80 750,100 L800,120 V200 H0 Z" fill="%23588157"/></svg>');
+            z-index: 3;
+        }
+
+        #grass {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10%;
+            background: #6B8E23;
+            z-index: 5;
+        }
+        #sun, #cloud, #moon {
+            top: 20px;
+            font-size: 5rem;
+            transition: transform 0.2s, filter 0.5s, opacity 1s;
+            z-index: 20; /* High z-index for UI elements */
+        }
+        #sun { left: 30px; filter: drop-shadow(0 0 15px #FCE66E) drop-shadow(0 0 35px #FFAF36); } /* palette-yellow, palette-orange-mid */
+        #cloud { left: calc(100% - 110px); filter: drop-shadow(0 0 5px grey); }
+        #moon { left: 30px; opacity: 0; pointer-events: none; filter: drop-shadow(0 0 10px white);}
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 2s infinite, fadeIn 1.5s forwards;
+            z-index: 1;
+        }
+        @keyframes twinkle {
+            50% { opacity: 0.5; }
+        }
+        
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(15deg); }
+        }
+        .raindrop {
+            position: absolute;
+            width: 3px; /* Slightly thicker */
+            height: 20px; /* Slightly longer */
+            background: linear-gradient(to bottom, rgba(135, 206, 235, 0.2), rgba(135, 206, 235, 1)); /* palette-blue */
+            border-radius: 50%;
+            animation: fall 0.7s linear infinite;
+            pointer-events: none;
+            transform: rotate(15deg);
+            z-index: 19; /* Below cloud/sun but above most things */
+        }
+        .puddle {
+            position: absolute;
+            bottom: 0;
+            background: rgba(135, 206, 235, 0.5); /* palette-blue */
+            border-radius: 50%;
+            animation: spread 2s forwards;
+            opacity: 0;
+            z-index: 6;
+        }
+        @keyframes spread {
+            from { transform: scale(0); opacity: 1;}
+            to { transform: scale(1); opacity: 0;}
+        }
+
+        #seed-packet {
+            position: absolute;
+            bottom: 12%;
+            left: 10px;
+            font-size: 3rem;
+            cursor: pointer;
+            z-index: 15;
+            transition: transform 0.2s;
+        }
+        #seed-packet:active { transform: scale(0.9); }
+        .seed, .flower, .plant {
+            position: absolute;
+            bottom: 10%;
+            font-size: 2rem;
+            z-index: 6;
+            transition: transform 1s, opacity 1s;
+        }
+        .seed { font-size: 1rem; }
+
+        #ball {
+            position: absolute;
+            bottom: 10%;
+            left: 70%;
+            font-size: 2.5rem;
+            z-index: 15;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+        }
+
+        .background-cloud {
+            position: absolute;
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.6);
+            z-index: 1;
+            animation: drift linear infinite;
+        }
+        #cloud1 { top: 15%; animation-duration: 90s; }
+        #cloud2 { top: 30%; animation-duration: 60s; animation-delay: -20s; }
+        #cloud3 { top: 10%; animation-duration: 120s; animation-delay: -50s; }
+        @keyframes drift {
+            from { transform: translateX(-200px); }
+            to { transform: translateX(110%); }
+        }
+        
+        #apple-tree {
+            position: absolute;
+            bottom: 9%;
+            right: 5%;
+            width: 150px;
+            height: 180px;
+            z-index: 8;
+            filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.2));
+        }
+        .apple {
+            position: absolute;
+            font-size: 2rem;
+            z-index: 9; /* Default apple z-index */
+            transition: top 0.3s ease-in, left 0.3s linear;
+        }
+
+        .item-label {
+            position: absolute;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 1001; /* Above everything */
+        }
+        .item-label.visible { opacity: 1; }
+        
+        @keyframes sparkle {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: gold;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 0.5s forwards;
+            z-index: 100;
+        }
+
+        .control-button {
+             @apply absolute bg-white/70 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center text-xl shadow-md border border-gray-200 cursor-pointer transition-transform hover:scale-110 active:scale-95;
+             z-index: 25; /* Below draggable items when active, but above background */
+        }
+
+
+    </style>
+</head>
+<body class="bg-palette-grey"> <!-- Use palette grey for main bg -->
+<div class="animation" id="animation">
+    <div class="word">
+      <span class="letter">Q</span>
+      <span class="letter">t</span>
+      <span class="letter">u</span>
+      <span class="letter">N</span>
+    </div>
+  </div>
+
+ 
+
+  <script>
+    // إظهار واجهة الدخول بعد 2.5 ثانية من الأنميشن
+    setTimeout(() => {
+      document.getElementById("animation").style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("animation").style.display = "none";
+        document.getElementById("loginPage").style.display = "block";
+        document.body.style.background = "linear-gradient(135deg, #2db8f1, #74e4ce)";
+      }, 500);
+    }, 2500);
+
+    // دالة تسجيل الدخول البسيطة
+    
+  </script>
+    <!-- Main Container -->
+    <div id="app" class="container mx-auto p-4 max-w-7xl">
+
+        <!-- Login Page -->
+        <section id="login-page" class="flex flex-col items-center justify-center min-h-screen fade-in">
+            <div class="bg-white p-12 rounded-2xl shadow-2xl text-center w-full max-w-md">
+                <h1 class="text-4xl md:text-6xl font-bold text-palette-blue mb-8">NutQ نطق</h1>
+                <form onsubmit="event.preventDefault(); checkLogin();" class="space-y-6">
+                    <div>
+                        <label for="username" class="block text-right text-gray-700 font-bold mb-2">اسم المستخدم</label>
+                        <input type="text" id="username" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-palette-blue" required>
+                    </div>
+                    <div>
+                        <label for="password" class="block text-right text-gray-700 font-bold mb-2">كلمة المرور</label>
+                        <input type="password" id="password" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-palette-blue" required>
+                    </div>
+                    <button type="submit" class="bg-palette-orange-mid text-white font-bold py-3 px-10 rounded-full text-2xl shadow-lg hover:bg-opacity-80 transition-colors duration-300 w-full pulse-animation">
+                        دخول
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Navbar (hidden initially) -->
+        <nav id="navbar" class="hidden bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-4 mb-8 sticky top-4 z-50">
+            <div class="flex justify-between items-center">
+                <h1 onclick="showPage('home-page')" class="text-2xl font-bold text-palette-blue cursor-pointer">NutQ نطق</h1>
+                <div class="space-x-2 rtl:space-x-reverse">
+                    <button onclick="showPage('home-page')" class="text-gray-700 hover:text-palette-blue font-semibold px-4 py-2 rounded-lg transition-colors">الرئيسية</button>
+                    <button onclick="showPage('contact-page')" class="text-gray-700 hover:text-palette-blue font-semibold px-4 py-2 rounded-lg transition-colors">تواصل معنا</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Home Page -->
+        <section id="home-page" class="hidden">
+            <h2 class="text-4xl font-bold text-center text-palette-blue my-8">اختر لعبتك المفضلة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                 <!-- Cards with palette colors -->
+                <div onclick="showPage('animals-game')" class="card border-palette-orange-mid"><div class="w-32 h-32 mb-4 rounded-full border-4 border-white shadow-md bg-palette-orange-light flex items-center justify-center text-7xl">🦁</div><h3 class="text-3xl font-bold text-palette-orange-mid">تعلم: الحيوانات</h3></div>
+                <div onclick="showPage('numbers-game')" class="card border-palette-blue"><div class="w-32 h-32 mb-4 rounded-full border-4 border-white shadow-md bg-palette-grey flex items-center justify-center text-7xl">🔢</div><h3 class="text-3xl font-bold text-palette-blue">تعلم: الأرقام</h3></div>
+                <div onclick="showPage('food-game')" class="card border-palette-yellow"><div class="w-32 h-32 mb-4 rounded-full border-4 border-white shadow-md bg-palette-cream flex items-center justify-center text-7xl">🍎</div><h3 class="text-3xl font-bold text-yellow-700">تعلم: الطعام</h3></div>
+                <div onclick="showPage('story-time-game')" class="card border-palette-lilac"><div class="w-32 h-32 mb-4 rounded-full border-4 border-white shadow-md bg-purple-100 flex items-center justify-center text-7xl">📖</div><h3 class="text-3xl font-bold text-purple-700">وقت القصة</h3></div>
+                <div onclick="showPage('quiz-game')" class="card border-palette-pink"><div class="w-32 h-32 mb-4 rounded-full border-4 border-white shadow-md bg-pink-100 flex items-center justify-center text-7xl">❓</div><h3 class="text-3xl font-bold text-pink-700">لعبة: أين هو؟</h3></div>
+                <div onclick="showPage('mohammed-game')" class="card border-palette-peach"><div class="w-32 h-32 mb-4 rounded-full border-4 border-white shadow-md bg-palette-orange-light flex items-center justify-center text-7xl">👦🏻</div><h3 class="text-3xl font-bold text-orange-700">العب مع محمد</h3></div>
+            </div>
+        </section>
+
+        <!-- Mohammed Game Page -->
+        <section id="mohammed-game" class="hidden">
+             <h2 class="text-4xl font-bold text-center text-yellow-800 my-8">العب مع محمد</h2>
+             <p class="text-center text-gray-600 mb-2 text-xl">المس وحرك العناصر، أو انقر عليها نقراً مزدوجاً/استخدم الأزرار!</p>
+             <div class="flex justify-center space-x-4 mb-4">
+                 <button id="reset-game-btn" title="إعادة ضبط اللعبة" class="bg-palette-grey hover:bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-full text-2xl shadow">🔄</button>
+                 <button id="calm-mode-btn" title="وضع الهدوء" class="bg-palette-grey hover:bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-full text-2xl shadow">🧘</button>
+             </div>
+             <div id="mohammed-game-world">
+                 <div id="far-mountains" class="parallax-bg"></div>
+                 <div id="near-hills" class="parallax-bg"></div>
+
+                 <div id="cloud1" class="background-cloud">☁️</div>
+                 <div id="cloud2" class="background-cloud">☁️</div>
+                 <div id="cloud3" class="background-cloud">☁️</div>
+
+                 <div id="sun" class="draggable" data-label="شمس">☀️</div>
+                 <button id="day-night-toggle" class="control-button top-5 left-28">🌙</button>
+
+                 <div id="moon" class="draggable" data-label="قمر">🌙</div>
+
+                 <div id="cloud" class="draggable" data-label="سحابة">☁️</div>
+                  <button id="rain-toggle" class="control-button top-5 right-28">🌧️</button>
+
+                 <div id="apple-tree">
+                    <svg viewBox="0 0 150 180">
+                        <rect x="65" y="100" width="20" height="80" fill="#8B4513"/>
+                        <circle cx="75" cy="70" r="60" fill="#228B22"/>
+                    </svg>
+                 </div>
+                 <div id="mohammed-character" class="draggable">
+                    <div class="thought-bubble">🍎</div>
+                    <svg viewBox="0 0 100 150">
+                        <g id="character-group">
+                            <path d="M 25,45 C 25,15 75,15 75,45 Z" fill="#333" />
+                            <circle cx="50" cy="45" r="30" fill="#ffcfa2"/>
+                            <circle cx="40" cy="45" r="5" fill="white"><animate attributeName="cy" values="45;42;45" dur="3s" repeatCount="indefinite" /></circle>
+                            <circle cx="60" cy="45" r="5" fill="white"><animate attributeName="cy" values="45;42;45" dur="3s" repeatCount="indefinite" /></circle>
+                            <circle cx="40" cy="45" r="2" fill="black"><animate attributeName="cy" values="45;42;45" dur="3s" repeatCount="indefinite" /></circle>
+                            <circle cx="60" cy="45" r="2" fill="black"><animate attributeName="cy" values="45;42;45" dur="3s" repeatCount="indefinite" /></circle>
+                            <path id="mouth" d="M 40,60 Q 50,65 60,60" stroke="black" fill="transparent" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="25" y="70" width="50" height="50" fill="#e53e3e" rx="10"/> <!-- Red shirt -->
+                            <rect x="30" y="115" width="15" height="25" fill="#4299e1" rx="5"/> <!-- Blue pants -->
+                            <rect x="55" y="115" width="15" height="25" fill="#4299e1" rx="5"/>
+                        </g>
+                    </svg>
+                    <div class="wet-overlay"></div>
+                 </div>
+                 <div id="grass"></div>
+                 <div id="seed-packet" data-label="بذور">🌱</div>
+                 <div id="ball" data-label="كرة">⚽</div>
+                 <div class="item-label"></div> <!-- Label element -->
+             </div>
+        </section>
+
+        <!-- Story Time Game Page -->
+        <section id="story-time-game" class="hidden">
+            <h2 class="text-4xl font-bold text-center text-purple-700 my-8">وقت القصة مع محمد</h2>
+            <p class="text-center text-gray-600 mb-8">اختر صورة لنبدأ القصة!</p>
+            <div id="story-starters-grid" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-4xl mx-auto"></div>
+            <div class="mt-12 max-w-2xl mx-auto text-center">
+                <div id="story-loader" class="loader hidden"></div>
+                <div id="story-result" class="bg-white p-8 rounded-2xl shadow-lg text-2xl leading-relaxed text-gray-700 min-h-[10rem] flex items-center justify-center">
+                    <p>القصة ستظهر هنا...</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quiz Game Page -->
+        <section id="quiz-game" class="hidden">
+            <div id="quiz-category-selection">
+                <h2 class="text-4xl font-bold text-center text-pink-700 my-8">اختر مجموعة للعبة</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div onclick="startQuiz('animals')" class="card border-palette-orange-mid"><div class="text-7xl">🦁</div><h3 class="text-3xl font-bold text-palette-orange-mid mt-4">الحيوانات</h3></div>
+                    <div onclick="startQuiz('food')" class="card border-palette-yellow"><div class="text-7xl">🍎</div><h3 class="text-3xl font-bold text-yellow-700 mt-4">الطعام</h3></div>
+                    <div onclick="startQuiz('numbers')" class="card border-palette-blue"><div class="text-7xl">🔢</div><h3 class="text-3xl font-bold text-palette-blue mt-4">الأرقام</h3></div>
+                </div>
+            </div>
+            <div id="quiz-interface" class="hidden text-center">
+                <h2 id="quiz-question" class="text-4xl font-bold text-center text-pink-700 my-8"></h2>
+                <div id="quiz-options" class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto"></div>
+                 <p id="quiz-feedback" class="text-2xl font-bold mt-6 h-8"></p>
+            </div>
+        </section>
+
+
+        <!-- Animals Game Page -->
+        <section id="animals-game" class="hidden">
+            <h2 class="text-4xl font-bold text-center text-palette-orange-mid my-8">تعلم الحيوانات</h2>
+            <p class="text-center text-gray-600 mb-8 text-xl">المس الصورة لتسمع الاسم.</p>
+            <div id="animals-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"></div>
+        </section>
+
+        <!-- Numbers Game Page -->
+        <section id="numbers-game" class="hidden">
+            <h2 class="text-4xl font-bold text-center text-palette-blue my-8">تعلم الأرقام</h2>
+             <p class="text-center text-gray-600 mb-8 text-xl">المس الصورة لتسمع الرقم بالعربية والإنجليزية.</p>
+            <div id="numbers-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"></div>
+        </section>
+
+        <!-- Food Game Page -->
+        <section id="food-game" class="hidden">
+            <h2 class="text-4xl font-bold text-center text-yellow-700 my-8">تعرف على الطعام</h2>
+             <p class="text-center text-gray-600 mb-8 text-xl">المس الصورة لتسمع الاسم.</p>
+            <div id="food-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4"></div>
+        </section>
+        
+        <!-- Contact Page -->
+        <section id="contact-page" class="hidden">
+             <div class="max-w-2xl mx-auto bg-white p-10 rounded-2xl shadow-xl">
+                 <h2 class="text-4xl font-bold text-center text-palette-blue mb-8">تواصل معنا</h2>
+                 <p class="text-center text-gray-600 mb-8">نسعد بتواصلكم! أرسلوا لنا استفساراتكم واقتراحاتكم.</p>
+                 <form onsubmit="event.preventDefault(); document.querySelector('#contact-page form').reset(); showMessage('شكراً لتواصلك!');">
+                     <div class="mb-4"><label for="name" class="block text-gray-700 font-bold mb-2">الاسم</label><input type="text" id="name" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-palette-blue"></div>
+                     <div class="mb-4"><label for="email" class="block text-gray-700 font-bold mb-2">البريد الإلكتروني</label><input type="email" id="email" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-palette-blue"></div>
+                     <div class="mb-6"><label for="message" class="block text-gray-700 font-bold mb-2">الرسالة</label><textarea id="message" rows="5" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-palette-blue"></textarea></div>
+                     <div class="text-center"><button type="submit" class="bg-palette-blue text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-opacity-80 transition-colors duration-300">إرسال</button></div>
+                 </form>
+            </div>
+        </section>
+
+        <!-- Message Modal -->
+        <div id="message-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+             <div class="bg-white p-6 rounded-lg shadow-xl text-center">
+                 <p id="message-text" class="text-xl mb-4"></p>
+                 <button onclick="closeMessage()" class="bg-palette-blue text-white px-4 py-2 rounded">حسناً</button>
+             </div>
+        </div>
+
+    </div>
+
+    <script>
+        const pages = ['login-page', 'home-page', 'animals-game', 'numbers-game', 'food-game', 'contact-page', 'story-time-game', 'quiz-game', 'mohammed-game'];
+        const navbar = document.getElementById('navbar');
+        let quizState = { correctAnswer: null, category: null, isChecking: false };
+        let labelTimeout = null; // For item labels timeout
+        let thoughtInterval = null; // For thought bubble interval
+        
+        // --- DATA ---
+        const animalsData = [ { name: 'أسد', sound: 'زئير', emoji: '🦁' }, { name: 'بقرة', sound: 'خوار', emoji: '🐮' }, { name: 'كلب', sound: 'نباح', emoji: '🐶' }, { name: 'قطة', sound: 'مواء', emoji: '🐱' }, { name: 'خروف', sound: 'ثغاء', emoji: '🐑' }, { name: 'حصان', sound: 'صهيل', emoji: '🐴' }, { name: 'ديك', sound: 'صياح', emoji: '🐔' }, { name: 'بطة', sound: 'بطبطة', emoji: '🦆' }, { name: 'فيل', sound: 'نهيم', emoji: '🐘' }, { name: 'قرد', sound: 'ضحك', emoji: '🐵' }, { name: 'ذئب', sound: 'عواء', emoji: '🐺' }, { name: 'ضفدع', sound: 'نقيق', emoji: '🐸' }, ];
+        const numbersData = [ { arabic: 'واحد', english: 'One', number: '١' }, { arabic: 'اثنان', english: 'Two', number: '٢' }, { arabic: 'ثلاثة', english: 'Three', number: '٣' }, { arabic: 'أربعة', english: 'Four', number: '٤' }, { arabic: 'خمسة', english: 'Five', number: '٥' }, { arabic: 'ستة', english: 'Six', number: '٦' }, { arabic: 'سبعة', english: 'Seven', number: '٧' }, { arabic: 'ثمانية', english: 'Eight', number: '٨' }, { arabic: 'تسعة', english: 'Nine', number: '٩' }, { arabic: 'عشرة', english: 'Ten', number: '١٠' }, ];
+        const foodData = [ { name: 'تفاحة', emoji: '🍎' }, { name: 'موز', emoji: '🍌' }, { name: 'برتقال', emoji: '🍊' }, { name: 'فراولة', emoji: '🍓' }, { name: 'عنب', emoji: '🍇' }, { name: 'بطيخ', emoji: '🍉' }, { name: 'أناناس', emoji: '🍍' }, { name: 'مانجو', emoji: '🥭' }, { name: 'كرز', emoji: '🍒' }, { name: 'خوخ', emoji: '🍑' }, { name: 'كمثرى', emoji: '🍐' }, { name: 'كيوي', emoji: '🥝' }, { name: 'ليمون', emoji: '🍋' }, { name: 'رمان', emoji: '🍈' }, { name: 'توت', emoji: '🫐' }, { name: 'طماطم', emoji: '🍅' }, { name: 'جزر', emoji: '🥕' }, { name: 'بروكلي', emoji: '🥦' }, { name: 'خيار', emoji: '🥒' }, { name: 'فلفل', emoji: '🫑' }, { name: 'باذنجان', emoji: '🍆' }, { name: 'بطاطس', emoji: '🥔' }, { name: 'ذرة', emoji: '🌽' }, { name: 'بصل', emoji: '🧅' }, { name: 'ثوم', emoji: '🧄' }, { name: 'خس', emoji: '🥬' }, { name: 'فطر', emoji: '🍄' }, { name: 'خبز', emoji: '🍞' }, { name: 'أرز', emoji: '🍚' }, { name: 'معكرونة', emoji: '🍝' }, { name: 'كرواسان', emoji: '🥐' }, { name: 'كعكة', emoji: '🎂' }, { name: 'بسكويت', emoji: '🍪' }, { name: 'حليب', emoji: '🥛' }, { name: 'جبن', emoji: '🧀' }, { name: 'بيض', emoji: '🥚' }, { name: 'دجاج', emoji: '🍗' }, { name: 'لحم', emoji: '🥩' }, { name: 'سمك', emoji: '🐟' }, { name: 'شوكولاتة', emoji: '🍫' }, { name: 'آيس كريم', emoji: '🍦' }, { name: 'دونات', emoji: '🍩' }, { name: 'عصير', emoji: '🧃' }, { name: 'ماء', emoji: '💧' }, { name: 'قهوة', emoji: '☕️' }, { name: 'بيتزا', emoji: '🍕' }, { name: 'برجر', emoji: '🍔' }, { name: 'بطاطا مقلية', emoji: '🍟' }, { name: 'نقانق', emoji: '🌭' }, { name: 'تاكو', emoji: '🌮' }, { name: 'ساندويتش', emoji: '🥪' }, { name: 'فشار', emoji: '🍿' }, { name: 'زلابية', emoji: '🥟' }, { name: 'سوشي', emoji: '🍣' }, { name: 'عسل', emoji: '🍯' }, { name: 'مربى', emoji: '🍓' }, { name: 'زبدة', emoji: '🧈' }, { name: 'أفوكادو', emoji: '🥑' }, { name: 'فلفل حار', emoji: '🌶️' }, { name: 'ملفوف', emoji: '🥬' }, { name: 'يقطين', emoji: '🎃' }, { name: 'زيتون', emoji: '🫒' }, { name: 'مكسرات', emoji: '🥜' }, { name: 'كستناء', emoji: '🌰' }, { name: 'فطيرة', emoji: '🥧' }, { name: 'حلوى', emoji: '🍬' }, { name: 'مصاصة', emoji: '🍭' }, { name: 'كاب كيك', emoji: '🧁' }, { name: 'شاي', emoji: '🫖' }, { name: 'مشروب غازي', emoji: '🥤' }, { name: 'جمبري', emoji: '🦐' }, { name: 'سلطعون', emoji: '🦀' }, { name: 'حساء', emoji: '🥣' }, { name: 'سلطة', emoji: '🥗' }, { name: 'وافل', emoji: '🧇' }, { name: 'بان كيك', emoji: '🥞' }, { name: 'ملح', emoji: '🧂' }, { name: 'فلافل', emoji: '🧆' }, { name: 'أرز باللبن', emoji: '🍚' }, { name: 'جوز الهند', emoji: '🥥' }, ];
+        const storyStarters = [ { name: 'أسد', emoji: '🦁' }, { name: 'سيارة', emoji: '🚗' }, { name: 'نجمة', emoji: '⭐' }, { name: 'قطة', emoji: '🐱' }, { name: 'شمس', emoji: '☀️' }, { name: 'قمر', emoji: '🌙' }, { name: 'سمكة', emoji: '🐠' }, { name: 'طائرة', emoji: '✈️' }, { name: 'بيت', emoji: '🏠' }, { name: 'شجرة', emoji: '🌳' }, { name: 'كرة', emoji: '⚽️' }, { name: 'كتاب', emoji: '📚' } ];
+
+        // --- URL-BASED AUDIO LOGIC ---
+        const TTS_URL_AR = (text) => `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${encodeURIComponent(text)}&tl=ar-SA`;
+        const TTS_URL_EN = (text) => `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${encodeURIComponent(text)}&tl=en-US`;
+        let audioPlayer = new Audio(); // Reusable audio player for main speech
+
+        function playSound(url, onEndCallback) {
+            if (!audioPlayer.paused) {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+            }
+            audioPlayer.src = url;
+            audioPlayer.play().catch(e => console.error("Audio play failed.", e));
+            if (onEndCallback) {
+                audioPlayer.onended = onEndCallback;
+            } else {
+                audioPlayer.onended = null; 
+            }
+        }
+
+        // --- LOGIN LOGIC ---
+        function checkLogin() {
+            const username = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if (username === 'tiba' && pass === '18') {
+                showPage('home-page');
+            } else {
+                showMessage('اسم المستخدم أو كلمة المرور غير صحيحة');
+            }
+        }
+        
+        // --- MESSAGE MODAL ---
+        function showMessage(text) {
+            document.getElementById('message-text').innerText = text;
+            document.getElementById('message-modal').classList.remove('hidden');
+        }
+        function closeMessage() {
+            document.getElementById('message-modal').classList.add('hidden');
+        }
+
+
+        // --- PAGE NAVIGATION ---
+        function showPage(pageIdToShow) {
+            if (!audioPlayer.paused) {
+                audioPlayer.pause();
+            }
+            // Stop Mohammed game loop when navigating away
+            if (mohammedGame.gameLoopId && pageIdToShow !== 'mohammed-game') {
+                cancelAnimationFrame(mohammedGame.gameLoopId);
+                mohammedGame.gameLoopId = null;
+                 if (thoughtInterval) {
+                     clearInterval(thoughtInterval);
+                     thoughtInterval = null;
+                 }
+            }
+
+            if (pageIdToShow === 'quiz-game') {
+                document.getElementById('quiz-category-selection').classList.remove('hidden');
+                document.getElementById('quiz-interface').classList.add('hidden');
+                document.getElementById('quiz-feedback').innerText = '';
+            }
+            if(pageIdToShow === 'mohammed-game') {
+                // Delay initialization slightly to ensure world dimensions are calculated
+                setTimeout(initializeMohammedGame, 100); 
+            }
+            if (pageIdToShow === 'login-page') { navbar.classList.add('hidden'); } else { navbar.classList.remove('hidden'); navbar.classList.add('fade-in'); }
+            pages.forEach(pageId => {
+                const page = document.getElementById(pageId);
+                 if (!page) { console.error(`Page element not found: ${pageId}`); return; } // Error checking
+                if (pageId === pageIdToShow) { page.classList.remove('hidden'); page.classList.add('fade-in'); } 
+                else { page.classList.add('hidden'); page.classList.remove('fade-in'); }
+            });
+            window.scrollTo(0, 0);
+        }
+
+        // --- GEMINI API ---
+        async function fetchWithBackoff(url, options, retries = 3, delay = 1000) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) return response;
+                } catch (error) { console.error("Fetch error:", error) }
+                await new Promise(resolve => setTimeout(resolve, delay * (i + 1)));
+            }
+            throw new Error(`Failed to fetch from ${url} after ${retries} attempts.`);
+        }
+        async function generateStory(topic) {
+            const loader = document.getElementById('story-loader');
+            const resultBox = document.getElementById('story-result');
+            loader.classList.remove('hidden');
+            resultBox.innerHTML = '<p>القصة ستظهر هنا...</p>';
+            
+            const systemPrompt = "أنت راوي قصص للأطفال الصغار جدًا. اروِ قصة قصيرة جدًا وسعيدة ومناسبة للعمر باستخدام جمل بسيطة جدًا باللغة العربية. يجب أن تكون القصة من فقرة واحدة فقط، لا تزيد عن 3-4 جمل.";
+            const userQuery = `اروِ لي قصة عن ${topic}`;
+            const apiKey = ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const payload = { contents: [{ parts: [{ text: userQuery }] }], systemInstruction: { parts: [{ text: systemPrompt }] }, };
+
+            try {
+                const response = await fetchWithBackoff(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                const result = await response.json();
+                const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (text) {
+                    resultBox.innerText = text;
+                    playSound(TTS_URL_AR(text));
+                } else {
+                    resultBox.innerText = "عذراً، لم أتمكن من إنشاء قصة. حاول مرة أخرى.";
+                }
+            } catch (error) {
+                resultBox.innerText = "حدث خطأ ما. يرجى التحقق من اتصالك بالإنترنت.";
+            } finally {
+                loader.classList.add('hidden');
+            }
+        }
+        
+        // --- QUIZ GAME LOGIC ---
+        function startQuiz(category) {
+            quizState.category = category;
+            document.getElementById('quiz-category-selection').classList.add('hidden');
+            document.getElementById('quiz-interface').classList.remove('hidden');
+            generateQuestion();
+        }
+
+        function generateQuestion() {
+            quizState.isChecking = false;
+            document.getElementById('quiz-feedback').innerText = '';
+            const dataMap = { animals: animalsData, food: foodData, numbers: numbersData };
+            const currentData = dataMap[quizState.category];
+            const nameKey = quizState.category === 'numbers' ? 'arabic' : 'name';
+            const shuffled = [...currentData].sort(() => 0.5 - Math.random());
+            const options = shuffled.slice(0, 4);
+            quizState.correctAnswer = options[Math.floor(Math.random() * options.length)];
+            const questionText = `أين هو ${quizState.correctAnswer[nameKey]}؟`;
+            document.getElementById('quiz-question').innerText = questionText;
+            playSound(TTS_URL_AR(questionText));
+            const optionsGrid = document.getElementById('quiz-options');
+            optionsGrid.innerHTML = '';
+            options.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'game-card bg-white';
+                const emoji = item.emoji || item.number;
+                const name = item[nameKey];
+                card.innerHTML = `<div class="text-7xl">${emoji}</div><h4 class="text-2xl font-bold">${name}</h4>`;
+                card.onclick = () => checkAnswer(item, card);
+                optionsGrid.appendChild(card);
+            });
+        }
+
+        function checkAnswer(selectedItem, cardElement) {
+            if (quizState.isChecking) return; 
+            quizState.isChecking = true;
+            const nameKey = quizState.category === 'numbers' ? 'arabic' : 'name';
+            const isCorrect = selectedItem[nameKey] === quizState.correctAnswer[nameKey];
+            const feedbackEl = document.getElementById('quiz-feedback');
+            document.querySelectorAll('#quiz-options .game-card').forEach(card => card.onclick = null);
+
+            if (isCorrect) {
+                cardElement.classList.add('correct-answer');
+                feedbackEl.innerText = "🎉 أحسنت!";
+                feedbackEl.className = 'text-2xl font-bold mt-6 h-8 text-green-600';
+                playSound(TTS_URL_AR("أحسنت"));
+                setTimeout(generateQuestion, 2000);
+            } else {
+                cardElement.classList.add('wrong-answer');
+                feedbackEl.innerText = "🤔 حاول مرة أخرى";
+                feedbackEl.className = 'text-2xl font-bold mt-6 h-8 text-red-600';
+                playSound(TTS_URL_AR("حاول مرة أخرى"));
+                 setTimeout(() => {
+                    cardElement.classList.remove('wrong-answer');
+                    quizState.isChecking = false;
+                    const optionElements = document.getElementById('quiz-options').children;
+                     const currentOptions = Array.from(optionElements).map(el => {
+                         const name = el.querySelector('h4').innerText;
+                         const dataMap = { animals: animalsData, food: foodData, numbers: numbersData };
+                         const currentData = dataMap[quizState.category];
+                         const nameKey = quizState.category === 'numbers' ? 'arabic' : 'name';
+                         return currentData.find(d => d[nameKey] === name || d.number === el.querySelector('div').innerText);
+                     });
+                     for (let i = 0; i < optionElements.length; i++) {
+                         const item = currentOptions[i];
+                         const element = optionElements[i];
+                          if (item) { element.onclick = () => checkAnswer(item, element); }
+                     }
+                }, 1500);
+            }
+        }
+        
+        // --- MOHAMMED GAME LOGIC ---
+        const mohammedGame = {
+            elements: {},
+            physics: {}, // Store physics bodies here
+            state: {},
+            rainInterval: null,
+            activeDrag: null,
+            gameLoopId: null,
+            labelElement: null,
+            thoughtBubbleElement: null,
+        };
+
+        const PHYSICS_CONSTS = {
+            GRAVITY: 0.6, // Slightly increased gravity for ball
+            FRICTION: 0.99,
+            BOUNCE: 0.5, // Reduced bounce
+            KICK_FORCE: 4, // Slightly reduced kick force
+            KICK_UP_FORCE: -3 // Reduced upward force significantly
+        };
+
+        function initializeMohammedGame() {
+            if (mohammedGame.gameLoopId) cancelAnimationFrame(mohammedGame.gameLoopId); // Stop previous loop if exists
+
+            const world = document.getElementById('mohammed-game-world');
+            if (!world) {
+                console.error("Game world element not found!");
+                return;
+            }
+            mohammedGame.elements = {
+                world: world,
+                character: world.querySelector('#mohammed-character'),
+                grass: world.querySelector('#grass'),
+                cloud: world.querySelector('#cloud'),
+                sun: world.querySelector('#sun'),
+                moon: world.querySelector('#moon'),
+                seedPacket: world.querySelector('#seed-packet'),
+                ball: world.querySelector('#ball'),
+                tree: world.querySelector('#apple-tree'),
+                mouth: world.querySelector('#mouth'),
+                farMountains: world.querySelector('#far-mountains'),
+                nearHills: world.querySelector('#near-hills'),
+                resetButton: document.getElementById('reset-game-btn'),
+                calmButton: document.getElementById('calm-mode-btn'),
+                rainToggleButton: document.getElementById('rain-toggle'),
+                dayNightToggleButton: document.getElementById('day-night-toggle'),
+            };
+            mohammedGame.labelElement = world.querySelector('.item-label');
+            mohammedGame.thoughtBubbleElement = world.querySelector('.thought-bubble');
+
+             // Ensure all essential elements exist
+            for (const key in mohammedGame.elements) {
+                if (!mohammedGame.elements[key]) {
+                    console.error(`Game element '#${key}' not found! Initialization failed.`);
+                    return; // Stop initialization if a crucial element is missing
+                }
+            }
+            
+            mohammedGame.physics = {
+                character: { el: mohammedGame.elements.character, x: world.offsetWidth / 2, y: world.offsetHeight * 0.9 - 120, vx: 0, vy: 0, onGround: true },
+                ball: { el: mohammedGame.elements.ball, x: world.offsetWidth * 0.7, y: world.offsetHeight * 0.9 - 40, vx: 0, vy: 0, onGround: true },
+                apples: [],
+            };
+
+            world.querySelectorAll('.apple').forEach(a => a.remove()); // Clear old apples
+            for (let i = 0; i < 3; i++) {
+                const appleEl = document.createElement('div');
+                appleEl.className = 'apple draggable';
+                appleEl.innerText = '🍎';
+                appleEl.dataset.label = "تفاحة"; // Add label data
+                const treeRect = mohammedGame.elements.tree.getBoundingClientRect();
+                const worldRect = world.getBoundingClientRect();
+
+                const initialX = treeRect.left - worldRect.left + [50, 80, 35][i];
+                const initialY = treeRect.top - worldRect.top + [40, 60, 80][i];
+                
+                appleEl.style.left = `${initialX}px`;
+                appleEl.style.top = `${initialY}px`;
+                mohammedGame.physics.apples.push({
+                    el: appleEl,
+                    x: initialX,
+                    y: initialY,
+                    vx: 0, vy: 0,
+                    onGround: false, eaten: false, attached: true
+                });
+                world.appendChild(appleEl);
+                 setupLabelInteraction(appleEl); // Setup label for apple
+            }
+            
+            // Reset state
+            mohammedGame.state = {
+                isRaining: false, isWet: false, isNight: false, ballCooldown: false, isCalmMode: false,
+            };
+            
+            // Apply initial UI state
+            mohammedGame.elements.character.classList.remove('wet', 'is-moving');
+            mohammedGame.elements.ball.style.transform = '';
+            world.querySelectorAll('.seed, .flower, .plant, .puddle, .sparkle').forEach(el => el.remove());
+            if(mohammedGame.thoughtBubbleElement) mohammedGame.thoughtBubbleElement.classList.remove('visible');
+            stopRain();
+            setDay(); // Also updates button text
+            toggleCalmMode(true); // Ensure calm mode is reset to off
+
+            // Setup Interactions
+            makeDraggable(mohammedGame.elements.character);
+            makeDraggable(mohammedGame.elements.sun);
+            makeDraggable(mohammedGame.elements.cloud);
+            makeDraggable(mohammedGame.elements.moon);
+            mohammedGame.physics.apples.forEach(apple => makeDraggable(apple.el));
+            setupLabelInteraction(mohammedGame.elements.sun);
+            setupLabelInteraction(mohammedGame.elements.cloud);
+            setupLabelInteraction(mohammedGame.elements.ball);
+            setupLabelInteraction(mohammedGame.elements.seedPacket);
+
+
+            mohammedGame.elements.seedPacket.onclick = () => dropSeed();
+            mohammedGame.elements.character.ondblclick = () => {
+                 if (mohammedGame.physics.character.onGround) {
+                     mohammedGame.physics.character.vy = -12; // Jump force
+                     mohammedGame.physics.character.onGround = false;
+                 }
+            };
+
+            // Buttons
+             mohammedGame.elements.resetButton.onclick = initializeMohammedGame;
+             mohammedGame.elements.calmButton.onclick = toggleCalmMode;
+             mohammedGame.elements.dayNightToggleButton.onclick = () => mohammedGame.state.isNight ? setDay() : setNight();
+             mohammedGame.elements.rainToggleButton.onclick = () => mohammedGame.state.isRaining ? stopRain() : startRain();
+
+            // Double click fallback
+            mohammedGame.elements.sun.ondblclick = () => !mohammedGame.state.isNight && setNight();
+            mohammedGame.elements.moon.ondblclick = () => mohammedGame.state.isNight && setDay();
+            mohammedGame.elements.cloud.ondblclick = () => mohammedGame.state.isRaining ? stopRain() : startRain();
+
+             // Thought bubble logic
+             if (thoughtInterval) clearInterval(thoughtInterval);
+             thoughtInterval = setInterval(showThoughtBubble, 15000); // Show every 15 seconds
+
+            gameLoop(); // Start the loop
+        }
+
+        function toggleCalmMode(forceOff = false) {
+             if (forceOff) {
+                 mohammedGame.state.isCalmMode = false;
+             } else {
+                mohammedGame.state.isCalmMode = !mohammedGame.state.isCalmMode;
+             }
+             mohammedGame.elements.world.classList.toggle('calm-mode', mohammedGame.state.isCalmMode);
+             mohammedGame.elements.calmButton.classList.toggle('bg-blue-200', mohammedGame.state.isCalmMode);
+        }
+
+         function setupLabelInteraction(element) {
+             let pressTimer;
+             const showLabel = (e) => {
+                 const labelText = element.dataset.label;
+                 if (!labelText || !mohammedGame.labelElement) return;
+                 const rect = element.getBoundingClientRect();
+                 const worldRect = mohammedGame.elements.world.getBoundingClientRect();
+                 mohammedGame.labelElement.innerText = labelText;
+                 mohammedGame.labelElement.style.left = `${rect.left - worldRect.left + rect.width / 2}px`;
+                 mohammedGame.labelElement.style.top = `${rect.top - worldRect.top - 25}px`; // Position above element
+                 mohammedGame.labelElement.style.transform = 'translateX(-50%)';
+                 mohammedGame.labelElement.classList.add('visible');
+
+                 clearTimeout(labelTimeout); // Clear previous timeout if any
+                 labelTimeout = setTimeout(() => {
+                     mohammedGame.labelElement.classList.remove('visible');
+                 }, 1500); // Hide after 1.5 seconds
+             };
+             const startPress = () => {
+                 clearTimeout(pressTimer); // Clear any previous timer
+                 pressTimer = setTimeout(showLabel, 500); // Show label after 500ms press
+             };
+             const cancelPress = () => {
+                 clearTimeout(pressTimer);
+             };
+
+             element.addEventListener('mousedown', startPress);
+             element.addEventListener('touchstart', startPress);
+             element.addEventListener('mouseup', cancelPress);
+             element.addEventListener('mouseleave', cancelPress);
+             element.addEventListener('touchend', cancelPress);
+             element.addEventListener('touchcancel', cancelPress);
+         }
+
+          function showThoughtBubble() {
+              if (document.getElementById('mohammed-game') && !document.getElementById('mohammed-game').classList.contains('hidden') && Math.random() < 0.3 && mohammedGame.thoughtBubbleElement) { // 30% chance each interval
+                 mohammedGame.thoughtBubbleElement.classList.add('visible');
+                 setTimeout(() => {
+                    if (mohammedGame.thoughtBubbleElement) mohammedGame.thoughtBubbleElement.classList.remove('visible');
+                 }, 3000); // Show for 3 seconds
+             }
+         }
+
+          function createSparkle(x, y) {
+             const sparkle = document.createElement('div');
+             sparkle.className = 'sparkle';
+             sparkle.style.left = `${x}px`;
+             sparkle.style.top = `${y}px`;
+             mohammedGame.elements.world.appendChild(sparkle);
+             setTimeout(() => sparkle.remove(), 500); // Remove after animation
+         }
+
+
+        function makeDraggable(element) {
+             let lastX = 0;
+             let offsetX = 0;
+             let offsetY = 0;
+
+            function dragStart(e) {
+                mohammedGame.activeDrag = element;
+                // Keep the current z-index or use default if needed
+                if (!element.style.zIndex) { element.style.zIndex = getComputedStyle(element).zIndex;} 
+                
+                if(element.id === 'mohammed-character') {
+                     element.classList.add('is-moving');
+                } else if (element.classList.contains('apple')) {
+                    const apple = mohammedGame.physics.apples.find(a => a.el === element);
+                    if (apple) apple.attached = false; // Detach from tree physics
+                }
+
+                const event = e.type === 'touchstart' ? e.touches[0] : e;
+                const rect = element.getBoundingClientRect();
+                offsetX = event.clientX - rect.left;
+                offsetY = event.clientY - rect.top;
+                lastX = event.clientX;
+                
+                document.addEventListener('mousemove', dragMove);
+                document.addEventListener('touchmove', dragMove, { passive: false });
+                document.addEventListener('mouseup', dragEnd);
+                document.addEventListener('touchend', dragEnd);
+                e.preventDefault();
+            }
+
+            function dragMove(e) {
+                if (mohammedGame.activeDrag !== element) return;
+                const event = e.type === 'touchmove' ? e.touches[0] : e;
+                const worldRect = mohammedGame.elements.world.getBoundingClientRect();
+                if(!worldRect) return; // Exit if world isn't ready
+                
+                const deltaX = event.clientX - lastX;
+                lastX = event.clientX;
+
+                let targetX = event.clientX - worldRect.left - offsetX;
+                let targetY = event.clientY - worldRect.top - offsetY;
+
+                if (element.id === 'mohammed-character') {
+                    const char = mohammedGame.physics.character;
+                    char.x += deltaX;
+                    char.x = Math.max(0, Math.min(char.x, worldRect.width - element.offsetWidth));
+                    // Parallax effect only if not calm mode
+                    if (!mohammedGame.state.isCalmMode) {
+                        mohammedGame.elements.farMountains.style.transform = `translateX(${-char.x * 0.1}px)`;
+                        mohammedGame.elements.nearHills.style.transform = `translateX(${-char.x * 0.3}px)`;
+                    }
+
+                } else if(element.classList.contains('apple')) {
+                    const apple = mohammedGame.physics.apples.find(a => a.el === element);
+                    if (apple) {
+                        // Directly update physics position while dragging apple
+                        apple.x = Math.max(0, Math.min(targetX, worldRect.width - element.offsetWidth));
+                        apple.y = Math.max(0, Math.min(targetY, worldRect.height - element.offsetHeight));
+                    }
+                } else { // Sun, Moon, Cloud
+                     element.style.left = `${Math.max(0, Math.min(targetX, worldRect.width - element.offsetWidth))}px`;
+                     element.style.top = `${Math.max(0, Math.min(targetY, worldRect.height / 2))}px`; // Keep in top half
+                }
+
+                if (element.id === 'sun' || element.id === 'moon') checkDayNight();
+                e.preventDefault();
+            }
+
+            function dragEnd(e) {
+                if(element.id === 'mohammed-character') element.classList.remove('is-moving');
+                // Reset z-index only if it wasn't specifically set
+                // element.style.zIndex = ''; // Let CSS handle default zIndex now
+                mohammedGame.activeDrag = null;
+                document.removeEventListener('mousemove', dragMove);
+                document.removeEventListener('touchmove', dragMove);
+                document.removeEventListener('mouseup', dragEnd);
+                document.removeEventListener('touchend', dragEnd);
+            }
+            element.addEventListener('mousedown', dragStart);
+            element.addEventListener('touchstart', dragStart, { passive: false });
+        }
+        
+        function gameLoop() {
+             if (!mohammedGame.elements.world) {
+                 console.error("World element missing, stopping game loop.");
+                 if (mohammedGame.gameLoopId) cancelAnimationFrame(mohammedGame.gameLoopId);
+                 mohammedGame.gameLoopId = null;
+                 return;
+             }
+            const world = mohammedGame.elements.world;
+            const groundY = world.offsetHeight * 0.9;
+            
+            // Update physics for all bodies
+            const bodies = [mohammedGame.physics.character, mohammedGame.physics.ball, ...mohammedGame.physics.apples];
+            bodies.forEach(body => {
+                 if (!body || !body.el || (mohammedGame.activeDrag === body.el) || body.attached) return;
+
+                 body.vy += PHYSICS_CONSTS.GRAVITY;
+                 body.vx *= PHYSICS_CONSTS.FRICTION;
+                 body.y += body.vy;
+                 body.x += body.vx;
+
+                 // Ground collision
+                 const elHeight = body.el.offsetHeight;
+                 if (body.y > groundY - elHeight) {
+                    body.y = groundY - elHeight;
+                    body.vy *= -PHYSICS_CONSTS.BOUNCE;
+                    if (Math.abs(body.vy) < 1) { // Rest condition
+                         body.vy = 0;
+                         body.onGround = true;
+                    } else {
+                         body.onGround = false;
+                    }
+                 } else {
+                     body.onGround = false;
+                 }
+
+                 // Top boundary collision
+                 if (body.y < 0) {
+                     body.y = 0;
+                     body.vy *= -PHYSICS_CONSTS.BOUNCE * 0.5; // Less bounce from top
+                 }
+                 
+                 // World horizontal bounds
+                 if (body.x < 0 || (body.x + body.el.offsetWidth) > world.offsetWidth) {
+                    body.vx *= -PHYSICS_CONSTS.BOUNCE;
+                    body.x = Math.max(0, Math.min(body.x, world.offsetWidth - body.el.offsetWidth));
+                 }
+            });
+
+            // Update DOM positions from physics state
+            const char = mohammedGame.physics.character;
+            mohammedGame.elements.character.style.left = `${char.x}px`;
+            mohammedGame.elements.character.style.bottom = `${world.offsetHeight - char.y - 120}px`;
+
+            const ball = mohammedGame.physics.ball;
+            mohammedGame.elements.ball.style.left = `${ball.x}px`;
+            mohammedGame.elements.ball.style.bottom = `${world.offsetHeight - ball.y - 40}px`;
+            if (Math.abs(ball.vx) > 0.1 && ball.onGround) { // Only rotate when rolling on ground
+                mohammedGame.elements.ball.style.transform = `rotate(${ball.x}deg)`;
+            }
+
+            mohammedGame.physics.apples.forEach(apple => {
+                 if (mohammedGame.activeDrag !== apple.el) { // Only update DOM if not dragging
+                    apple.el.style.left = `${apple.x}px`;
+                    apple.el.style.top = `${apple.y}px`;
+                 }
+                 if (!apple.eaten) checkAppleDrop(apple);
+            });
+            
+            // Other game logic
+            checkBallCollision();
+            checkWeatherEffects();
+
+            mohammedGame.gameLoopId = requestAnimationFrame(gameLoop);
+        }
+
+        function checkWeatherEffects() {
+            const charRect = mohammedGame.elements.character.getBoundingClientRect();
+             if (mohammedGame.state.isRaining) {
+                const cloudRect = mohammedGame.elements.cloud.getBoundingClientRect();
+                const isUnderCloud = charRect.left < cloudRect.right && charRect.right > cloudRect.left;
+                if (isUnderCloud && !mohammedGame.state.isWet) {
+                    mohammedGame.state.isWet = true;
+                    mohammedGame.elements.character.classList.add('wet');
+                }
+            }
+            if (!mohammedGame.state.isNight) {
+                 const sunRect = mohammedGame.elements.sun.getBoundingClientRect();
+                 const isUnderSun = charRect.left < sunRect.right && charRect.right > sunRect.left;
+                 if (isUnderSun && mohammedGame.state.isWet) {
+                     mohammedGame.state.isWet = false;
+                     mohammedGame.elements.character.classList.remove('wet');
+                 }
+            }
+        }
+
+        function checkAppleDrop(apple) {
+            if (apple.eaten || apple.attached) return; // Cant eat attached apples
+            const appleRect = apple.el.getBoundingClientRect();
+            const charRect = mohammedGame.elements.character.getBoundingClientRect();
+            
+            // Check collision
+            if (appleRect.left < charRect.right && appleRect.right > charRect.left &&
+                appleRect.top < charRect.bottom && appleRect.bottom > charRect.top) {
+                
+                apple.el.style.opacity = '0';
+                apple.eaten = true;
+                apple.vx = 0;
+                apple.vy = 0;
+
+                createSparkle(appleRect.left + appleRect.width / 2, appleRect.top + appleRect.height / 2); // Sparkle effect
+
+                mohammedGame.elements.mouth.setAttribute('d', 'M 40,55 Q 50,70 60,55'); // Open mouth smile
+                setTimeout(() => {
+                    mohammedGame.elements.mouth.setAttribute('d', 'M 40,60 Q 50,65 60,60'); // Back to normal
+                }, 1500);
+
+                setTimeout(() => { // Respawn apple
+                    apple.el.style.opacity = '1';
+                    apple.eaten = false;
+                    apple.attached = true; // Reattach to tree logic
+                    const treeRect = mohammedGame.elements.tree.getBoundingClientRect();
+                    const worldRect = mohammedGame.elements.world.getBoundingClientRect();
+                     if (!treeRect || !worldRect) return; // Safety check
+                    // Respawn near original position, slightly randomized
+                    const originalIndex = mohammedGame.physics.apples.indexOf(apple);
+                     if (originalIndex === -1) return; // Safety check if apple removed
+                    apple.x = treeRect.left - worldRect.left + [50, 80, 35][originalIndex % 3] + (Math.random()*10-5) ;
+                    apple.y = treeRect.top - worldRect.top + [40, 60, 80][originalIndex % 3] + (Math.random()*10-5);
+                    apple.vx = 0;
+                    apple.vy = 0;
+                    apple.onGround = false;
+                    // Directly update style to snap back
+                    apple.el.style.left = `${apple.x}px`;
+                    apple.el.style.top = `${apple.y}px`;
+
+
+                }, 5000);
+            }
+        }
+
+        function checkBallCollision() {
+            const char = mohammedGame.physics.character;
+            const ball = mohammedGame.physics.ball;
+            const dx = (ball.x + 20) - (char.x + 40); // Ball center vs Char center approx
+            const dy = (ball.y + 20) - (char.y + 60);
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 50) { // Collision radius (ball radius + char radius approx)
+                ball.vx = (dx / distance) * PHYSICS_CONSTS.KICK_FORCE;
+                 // Apply reduced upward force
+                ball.vy = (dy / distance) * PHYSICS_CONSTS.KICK_FORCE + PHYSICS_CONSTS.KICK_UP_FORCE; 
+                ball.onGround = false;
+            }
+        }
+
+        function checkDayNight() {
+            const { sun, world } = mohammedGame.elements;
+            if(!sun || !world) return;
+            const sunRect = sun.getBoundingClientRect();
+            const worldRect = world.getBoundingClientRect();
+            if(!sunRect || !worldRect) return;
+            
+            if(sunRect.right > worldRect.right - 20 && !mohammedGame.state.isNight) {
+                setNight();
+            } else if (sunRect.left < 20 && mohammedGame.state.isNight) {
+                setDay();
+            }
+        }
+
+        function setNight() {
+             if (mohammedGame.state.isNight) return;
+             mohammedGame.state.isNight = true;
+             stopRain();
+             const { world, sun, moon, dayNightToggleButton } = mohammedGame.elements;
+             world.classList.add('night-sky');
+             sun.style.opacity = '0';
+             sun.style.pointerEvents = 'none';
+             moon.style.opacity = '1';
+             moon.style.pointerEvents = 'auto';
+             dayNightToggleButton.innerText = '☀️'; // Button shows sun to switch back
+             // Add stars
+             for(let i=0; i<20; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = star.style.height = `${Math.random() * 3 + 1}px`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 60}%`;
+                world.appendChild(star);
+             }
+        }
+         function setDay() {
+             if (!mohammedGame.state.isNight) return;
+             mohammedGame.state.isNight = false;
+             const { world, sun, moon, dayNightToggleButton } = mohammedGame.elements;
+             world.classList.remove('night-sky');
+             sun.style.opacity = '1';
+             sun.style.pointerEvents = 'auto';
+             moon.style.opacity = '0';
+             moon.style.pointerEvents = 'none';
+             dayNightToggleButton.innerText = '🌙'; // Button shows moon to switch back
+             world.querySelectorAll('.star').forEach(s => s.remove());
+        }
+        
+        function startRain() {
+            if (mohammedGame.state.isNight || mohammedGame.state.isRaining) return;
+            mohammedGame.state.isRaining = true;
+            mohammedGame.elements.world.style.background = '#778899';
+            mohammedGame.elements.rainToggleButton.classList.add('bg-blue-200'); // Indicate raining
+            
+            mohammedGame.rainInterval = setInterval(() => {
+                const { cloud, world, grass } = mohammedGame.elements;
+                 if(!cloud || !world || !grass) return; // Safety check
+                const cloudRect = cloud.getBoundingClientRect();
+                const worldRect = world.getBoundingClientRect();
+                 if(!cloudRect || !worldRect) return;
+                
+                const dropLeft = cloudRect.left - worldRect.left + (Math.random() * cloudRect.width);
+                const drop = document.createElement('div');
+                drop.className = 'raindrop';
+                drop.style.left = `${dropLeft}px`;
+                drop.style.top = `${cloudRect.top - worldRect.top + cloudRect.height / 2}px`;
+                world.appendChild(drop);
+                setTimeout(() => {
+                    const puddle = document.createElement('div');
+                    puddle.className = 'puddle';
+                    puddle.style.left = `${drop.offsetLeft - 5}px`; // Center puddle approx
+                    puddle.style.width = `${Math.random() * 20 + 10}px`;
+                    puddle.style.height = puddle.style.width / 2;
+                    grass.appendChild(puddle);
+                    setTimeout(() => puddle.remove(), 2000);
+                    drop.remove();
+                }, 700); // Corresponds to animation duration
+
+                world.querySelectorAll('.seed').forEach(seed => {
+                    if (dropLeft > seed.offsetLeft && dropLeft < seed.offsetLeft + seed.offsetWidth) {
+                        const flower = document.createElement('div');
+                        flower.className = 'flower';
+                        flower.innerText = ['🌸', '🌷', '🌻'][Math.floor(Math.random() * 3)];
+                        flower.style.left = seed.style.left;
+                        world.appendChild(flower);
+                        createSparkle(seed.offsetLeft + 5, seed.offsetTop + 5); // Sparkle effect
+                        seed.remove();
+                    }
+                });
+            }, 50);
+        }
+
+        function stopRain() {
+             mohammedGame.state.isRaining = false;
+             if(mohammedGame.elements.rainToggleButton) mohammedGame.elements.rainToggleButton.classList.remove('bg-blue-200');
+             if(!mohammedGame.state.isNight && mohammedGame.elements.world) mohammedGame.elements.world.style.background = '';
+             clearInterval(mohammedGame.rainInterval);
+             mohammedGame.rainInterval = null;
+             // Optional: remove leftover raindrops immediately
+             if(mohammedGame.elements.world) mohammedGame.elements.world.querySelectorAll('.raindrop').forEach(d => d.remove());
+        }
+
+        function dropSeed() {
+            const seed = document.createElement('div');
+            seed.className = 'seed';
+            seed.innerText = '•';
+            seed.style.left = `${Math.random() * 80 + 10}%`;
+            mohammedGame.elements.world.appendChild(seed);
+        }
+        
+        // --- UI INITIALIZATION ---
+        function createAnimalCards() {
+            const grid = document.getElementById('animals-grid');
+            if(!grid) return;
+            grid.innerHTML = '';
+            animalsData.forEach(animal => {
+                const card = document.createElement('div');
+                // Removed button, card is clickable
+                card.className = 'game-card bg-palette-orange-light border-palette-orange-mid'; 
+                card.innerHTML = `<div class="text-7xl mb-2">${animal.emoji}</div><h4 class="text-2xl font-bold text-orange-900">${animal.name}</h4>`;
+                card.onclick = () => playSound(TTS_URL_AR(animal.name));
+                grid.appendChild(card);
+            });
+        }
+        function createNumberCards() {
+            const grid = document.getElementById('numbers-grid');
+             if(!grid) return;
+            grid.innerHTML = '';
+            numbersData.forEach(num => {
+                const card = document.createElement('div');
+                 // Removed button, card is clickable
+                card.className = 'game-card bg-palette-grey border-palette-blue';
+                card.innerHTML = `<div class="text-7xl font-bold text-blue-800">${num.number}</div><h4 class="text-xl font-semibold text-blue-900">${num.arabic}</h4><p class="text-md text-gray-500">${num.english}</p>`;
+                card.onclick = () => playSound(TTS_URL_AR(num.arabic), () => playSound(TTS_URL_EN(num.english)));
+                grid.appendChild(card);
+            });
+        }
+        function createFoodCards() {
+            const grid = document.getElementById('food-grid');
+             if(!grid) return;
+            grid.innerHTML = '';
+            foodData.forEach(food => {
+                const card = document.createElement('div');
+                 // Removed button, card is clickable
+                card.className = 'game-card bg-palette-cream border-palette-yellow p-2';
+                card.innerHTML = `<div class="text-5xl sm:text-6xl">${food.emoji}</div><h4 class="text-lg font-bold text-yellow-900">${food.name}</h4>`;
+                card.onclick = () => playSound(TTS_URL_AR(food.name));
+                grid.appendChild(card);
+            });
+        }
+        function createStoryStarterCards() {
+            const grid = document.getElementById('story-starters-grid');
+             if(!grid) return;
+            grid.innerHTML = '';
+            storyStarters.forEach(starter => {
+                const card = document.createElement('div');
+                card.className = 'game-card bg-purple-100 border-palette-lilac'; // Using standard purple bg for variety
+                card.innerHTML = `<div class="text-7xl mb-4">${starter.emoji}</div><h4 class="text-2xl font-bold text-purple-900">${starter.name}</h4>`;
+                card.onclick = () => generateStory(starter.name);
+                grid.appendChild(card);
+            });
+        }
+
+        // Initialize UI cards on script load
+        createAnimalCards();
+        createNumberCards();
+        createFoodCards();
+        createStoryStarterCards();
+        
+    </script>
+</body>
+</html>
